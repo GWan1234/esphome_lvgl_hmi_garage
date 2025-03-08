@@ -1,0 +1,22 @@
+# Based of https://github.com/alaltitov/display/tree/main
+
+# ESP32-S3-Touch-LCD-7
+substitutions: !include hmi-garage/substitutions.yaml
+
+packages:
+  hardware: !include hmi-garage/sdl.yaml
+  button: !include hmi-garage/components/button.yaml
+  globals: !include hmi-garage/components/globals.yaml
+  interval: !include hmi-garage/components/interval.yaml
+  text_sensor: !include hmi-garage/components/text_sensor.yaml
+  sensor: !include hmi-garage/components/sensor.yaml
+  binary_sensor: !include hmi-garage/components/binary_sensor.yaml
+  switch: !include hmi-garage/components/switch.yaml
+  online_image: !include hmi-garage/components/online_image.yaml
+  select: !include hmi-garage/components/select.yaml
+  lvgl: !include hmi-garage/display/lvgl.yaml
+
+external_components:
+  - source: github://pr#8040
+    refresh: 30s
+    components: [http_request]

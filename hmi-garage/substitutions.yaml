@@ -1,0 +1,104 @@
+dname: "hmi-garage"
+uname: "HMI Garage"
+
+settings:           "\U000F0493" # settings
+thermostat:         "\U0000e901" # thermostat
+lights:             "\U000F0335" # lightbulb
+home_lightbulb:     "\U000F1251" # mdi-home-lightbulb
+lightbulb_group:    "\U000F1253" # mdi-lightbulb-group
+motion:             "\U000F0D91" # motion, presence
+heating:            "\U000F0438" # heating
+ha:                 "\U000F07D0" # home assistant
+ventilation:        "\U0000e90d" # ventilation
+wifi_25:            "\U000F091F" # wifi signal from 25% to 1%
+wifi_50:            "\U000F0922" # wifi signal from 50% to 25%
+wifi_75:            "\U000F0925" # wifi signal from 75% to 50%
+wifi_100:           "\U000F0928" # wifi signal from 100% to 75% or disable
+humidity:           "\U0000e912" # humidity
+temperature:        "\U0000e915" # temperature
+wind_speed:         "\U000F059D" # mdi-weather-windy
+illumination:       "\U0000e916" # lux
+empty:              "\U0000e917" # placeholder
+door_open:          "\U000F081C"
+patio_door_open:    "\U000F1820"
+watering_can:       "\U000F1481"
+ceiling_light:      "\U000F0769" # mdi-ceiling-light
+light_recessed:     "\U000F179B" # mdi-light-recessed
+lamp_post:          "\U000F1A60" # mdi-post-lamp
+music_note:         "\U000F075A" # mdi-music
+h_circle_outline:   "\U000F0C02" # mdi-alpha-h-circle-outline
+hvac_cooling:       "\U000F1A71" # mdi-snowflake-thermometer
+hvac_heating:       "\U000F0510" # mdi-thermometer-lines
+volume_high:        "\U000F057E" # mdi-volume-high
+volume_medium:      "\U000F0580" # mdi-volume-medium
+volume_low:         "\U000F057F" # mdi-volume-low
+volume_off:         "\U000F0581" # mdi-volume-off
+pause_icon:         "\U000F03E4" # mdi-pause
+play_icon:          "\U000F040A" # mdi-play
+skip_next_icon:     "\U000F04AD" # mdi-skip-next
+skip_previous_icon: "\U000F04AE" # mdi-skip-previous
+repeat_off_icon:    "\U000F0457" # mdi-repeat-off
+repeat_once_icon:   "\U000F0458" # mdi-repeat-once
+repeat_icon:        "\U000F0456" # mdi-repeat
+shuffle_disabled_icon: "\U000F049E" # mdi-shuffle-disabled
+shuffle_icon:       "\U000F049D" # mdi-shuffle
+waves_arrow_left:   "\U000F1859" # mdi-waves-arrow-left
+waves_arrow_up:     "\U000F185B" # mdi-waves-arrow-up
+home_floor_g:       "\U000F0D85" # mdi-home-floor-g
+
+ha_instance_url: "http://192.168.0.250:8123"
+# token is valid for 10 years (2025-02-15)
+ha_auth_token: !secret ha_long_term_auth_token
+default_music_cover_png_url: 'http://192.168.0.250:8123/local/music_note_cover.png?authToken=${ha_auth_token}'
+default_music_cover_jpg_url: 'http://192.168.0.250:8123/local/music_note_cover.jpg?authToken=${ha_auth_token}'
+
+
+
+default_min_kelvin: "2000"
+default_max_kelvin: "6535"
+default_mid_kelvin: "4000"
+
+exterieur_cote_lights_ha_entity_id: "exterieur_cote"
+exterieur_cote_min_kelvin: "${default_min_kelvin}"
+exterieur_cote_max_kelvin: "${default_max_kelvin}"
+exterieur_garage_lights_ha_entity_id: "exterieur_garage"
+exterieur_garage_min_kelvin: "${default_min_kelvin}"
+exterieur_garage_max_kelvin: "${default_max_kelvin}"
+lampadaire_avant_lights_ha_entity_id: "lampadaire_avant"
+lampadaire_avant_min_kelvin: "${default_min_kelvin}"
+lampadaire_avant_mid_kelvin: "4000"
+lampadaire_avant_max_kelvin: "${default_max_kelvin}"
+grenier_light_ha_entity_id: "switch_lumieres_grenier_relay"
+exterieur_avant_lights_ha_entity_id: "exterieur_avant"
+exterieur_avant_min_kelvin: "${default_min_kelvin}"
+exterieur_avant_mid_kelvin: "4000"
+exterieur_avant_max_kelvin: "${default_max_kelvin}"
+exterieur_avant_maison_lights_ha_entity_id: "exterieur_avant_corniches"
+exterieur_avant_maison_min_kelvin: "${default_min_kelvin}"
+exterieur_avant_maison_mid_kelvin: "4000"
+exterieur_avant_maison_max_kelvin: "${default_max_kelvin}"
+portique_avant_lights_ha_entity_id: "portique_avant"
+portique_avant_min_kelvin: "${default_min_kelvin}"
+portique_avant_mid_kelvin: "4000"
+portique_avant_max_kelvin: "${default_max_kelvin}"
+tout_le_sous_sol_lights_ha_entity_id: "tout_le_sous_sol"
+media_player_garage_entity_id: "media_player.mass_garage"
+
+garage_rdc_lights_ha_entity_id: "switch_garage_ss_relay"
+garage_light_automation_freeze_toggle: "input_boolean.figer_l_etat_des_lumieres_du_garage"
+garage_light_automation_freeze_timer_end_time: "sensor.timer_de_figer_les_lumieres_du_garage_heure_de_fin_pretty_print_localtime"
+garage_light_automation_freeze_timer_value_on_start: "input_datetime.temps_pour_figer_les_lumieres_du_garage"
+garage_light_automation_freeze_add_hour: "input_button.figer_les_lumieres_garage_ajouter_1_heure"
+garage_light_automation_freeze_sub_hour: "input_button.figer_les_lumieres_garage_soustraire_1_heure"
+garage_light_automation_freeze_add_minutes: "input_button.figer_les_lumieres_garage_ajouter_10_minutes"
+garage_light_automation_freeze_sub_minutes: "input_button.figer_les_lumieres_garage_soustraire_10_minutes"
+
+# Replace with real entity IDs once everything is set up in this room
+garage_ss_lights_ha_entity_id: "lumieres_garage_ss"
+garage_ss_light_automation_freeze_toggle: "input_boolean.figer_l_etat_des_lumieres_du_garage_ss"
+garage_ss_light_automation_freeze_timer_end_time: "sensor.timer_de_figer_les_lumieres_du_garage_ss_heure_de_fin_pretty_print_localtime"
+garage_ss_light_automation_freeze_timer_value_on_start: "input_datetime.temps_initial_pour_figer_les_lumieres_du_garage_ss"
+garage_ss_light_automation_freeze_add_hour: "input_button.figer_les_lumieres_garage_ss_ajouter_1_heure"
+garage_ss_light_automation_freeze_sub_hour: "input_button.figer_les_lumieres_garage_ss_soustraire_1_heure"
+garage_ss_light_automation_freeze_add_minutes: "input_button.figer_les_lumieres_garage_ss_ajouter_10_minutes"
+garage_ss_light_automation_freeze_sub_minutes: "input_button.figer_les_lumieres_garage_ss_soustraire_10_minutes"
