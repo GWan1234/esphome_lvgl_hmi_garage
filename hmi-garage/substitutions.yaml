@@ -52,7 +52,7 @@ ha_auth_token: !secret ha_long_term_auth_token
 default_music_cover_png_url: 'http://192.168.0.250:8123/local/music_note_cover.png?authToken=${ha_auth_token}'
 default_music_cover_jpg_url: 'http://192.168.0.250:8123/local/music_note_cover.jpg?authToken=${ha_auth_token}'
 
-
+screen_idle_timeout_seconds: "5"
 
 default_min_kelvin: "2000"
 default_max_kelvin: "6535"

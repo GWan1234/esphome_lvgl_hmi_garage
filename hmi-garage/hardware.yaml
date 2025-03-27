@@ -296,7 +296,9 @@ touchscreen:
           - logger.log: "LVGL resuming"
           - lvgl.resume:
           - lvgl.widget.redraw:
-          - switch.turn_on: display_backlight
+    - binary_sensor.template.publish:
+        id: id_bin_bl_state
+        state: True
 
 # Display
 display:

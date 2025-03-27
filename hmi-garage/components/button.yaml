@@ -2,3 +2,16 @@ button:
   - platform: restart
     name: "Device Restart"
     id: id_button_device_restart
+
+  - platform: template
+    name: "Wake Up Device"
+    on_press:
+      - if:
+          condition: lvgl.is_paused
+          then:
+            - logger.log: "LVGL resuming"
+            - lvgl.resume:
+            - lvgl.widget.redraw:
+      - binary_sensor.template.publish:
+          id: id_bin_bl_state
+          state: True
