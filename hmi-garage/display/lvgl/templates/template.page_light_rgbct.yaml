@@ -59,6 +59,8 @@ sensor:
     internal: true
     entity_id: light.${light_ha_entity}
     attribute: brightness
+    filters:
+      - debounce: 250ms
     on_value:
       - if:
           condition:
@@ -87,6 +89,8 @@ sensor:
     entity_id: light.${light_ha_entity}
     internal: true
     attribute: color_temp_kelvin
+    filters:
+      - debounce: 250ms
     on_value:
       - globals.set:
           id: id_global_${light_ha_entity}_kelvin
