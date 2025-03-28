@@ -23,4 +23,5 @@ binary_sensor:
                   tile_id: id_lv_tile_page0
                   animated: true
               - lvgl.page.show: page_home
+        - delay: 100ms
         - lvgl.pause:
