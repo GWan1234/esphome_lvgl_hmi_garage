@@ -79,6 +79,11 @@ widgets:
                           result += (uint8_t)(float(x) / 2.55); // Swing from 21 to 120
                           return result;
                         shadow_color: !lambda return lv_color_hsv_to_rgb(id(${id_global_hue}), id(${id_global_satu}), 100);
+                    - lvgl.label.update:
+                        id: ${id_txt_bright_percent}
+                        text:
+                            format: "%.0f %%"
+                            args: ['x / 2.55']
                   on_release:
                       - homeassistant.action:
                           action: light.turn_on
