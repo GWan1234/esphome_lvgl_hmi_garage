@@ -53,6 +53,7 @@ default_music_cover_png_url: 'http://192.168.0.250:8123/local/music_note_cover.p
 default_music_cover_jpg_url: 'http://192.168.0.250:8123/local/music_note_cover.jpg?authToken=${ha_auth_token}'
 
 screen_idle_timeout_seconds: "5"
+entity_update_debounce_ms: "350"
 
 default_min_kelvin: "2000"
 default_max_kelvin: "6535"
@@ -64,7 +65,7 @@ exterieur_cote_max_kelvin: "${default_max_kelvin}"
 exterieur_garage_lights_ha_entity_id: "exterieur_garage"
 exterieur_garage_min_kelvin: "${default_min_kelvin}"
 exterieur_garage_max_kelvin: "${default_max_kelvin}"
-lampadaire_avant_lights_ha_entity_id: "lampadaire_avant"
+lampadaire_avant_lights_ha_entity_id: "ampoule_cagibi" #"lampadaire_avant"
 lampadaire_avant_min_kelvin: "${default_min_kelvin}"
 lampadaire_avant_mid_kelvin: "4000"
 lampadaire_avant_max_kelvin: "${default_max_kelvin}"
