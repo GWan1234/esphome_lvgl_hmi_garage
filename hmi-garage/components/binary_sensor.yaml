@@ -1,6 +1,7 @@
 binary_sensor:
   - platform: template
     id: id_bin_bl_state
+    name: "Device active"
     filters:
       - delayed_off: !lambda "return ((id(id_num_bl_timeout).state - ${screen_idle_timeout_seconds}) * 1000 );"
     on_press:

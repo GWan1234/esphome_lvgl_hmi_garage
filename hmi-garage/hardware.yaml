@@ -33,6 +33,18 @@ esphome:
     board_build.flash_size: 8MB #Added
     # No second OTA partition. Must be flashed through serial (hint: ser2net)
 #    board_build.partitions: "../../../hmi-garage/custom_partition_no_ota.csv"
+  on_boot:
+    # Workaround for binary_sensor with delayed_off filter
+    # https://github.com/esphome/issues/issues/3722
+    - priority: -100 # everything should be initialized
+      then:
+        - binary_sensor.template.publish:
+            id: id_bin_bl_state
+            state: True
+        - delay: 100ms
+        - binary_sensor.template.publish:
+            id: id_bin_bl_state
+            state: False
 
 logger:
   level: DEBUG
