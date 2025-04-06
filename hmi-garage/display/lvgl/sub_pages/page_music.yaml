@@ -34,6 +34,29 @@ binary_sensor:
               else if (id(id_media_volume).state < 0.65) {return "${volume_medium}";}
               else {return "${volume_high}";}
 
+  - platform: homeassistant
+    id: id_bin_audio_from_mass
+    internal: True
+    entity_id: binary_sensor.garage_audio_from_mass
+    publish_initial_state: True
+    on_press:
+      then:
+        - lvgl.label.update:
+            id: id_label_media_player_repeat
+            hidden: False
+        - lvgl.label.update:
+            id: id_label_media_player_shuffle
+            hidden: False
+    on_release:
+      then:
+        - lvgl.label.update:
+            id: id_label_media_player_repeat
+            hidden: True
+        - lvgl.label.update:
+            id: id_label_media_player_shuffle
+            hidden: True
+
+
 sensor:
   # Media player volume value
   - platform: homeassistant
@@ -362,7 +385,7 @@ lvgl:
             rows:
               - buttons:
                 - id: id_lv_btnmat_pl1
-                  text: "Playlist1"
+                  text: ${music_playlist1_text}
                   control:
                     recolor: true
                   on_press:
@@ -371,7 +394,7 @@ lvgl:
                           id: id_event_media
                           event_type: button_playlist1
                 - id: id_lv_btnmat_pl2
-                  text: "Playlist2"
+                  text: ${music_playlist2_text}
                   control:
                     recolor: true
                   on_press:
@@ -381,7 +404,7 @@ lvgl:
                           event_type: button_playlist2
               - buttons:
                 - id: id_lv_btnmat_pl3
-                  text: "Playlist3"
+                  text: ${music_playlist3_text}
                   control:
                     recolor: true
                   on_press:
@@ -390,7 +413,7 @@ lvgl:
                           id: id_event_media
                           event_type: button_playlist3
                 - id: id_lv_btnmat_pl4
-                  text: "Playlist4"
+                  text: ${music_playlist4_text}
                   control:
                     recolor: true
                   on_press:

@@ -59,6 +59,8 @@ default_min_kelvin: "2000"
 default_max_kelvin: "6535"
 default_mid_kelvin: "4000"
 
+weather_ha_entity_id: "weather.environnement_canada_meteo_previsions"
+
 exterieur_cote_lights_ha_entity_id: "exterieur_cote"
 exterieur_cote_min_kelvin: "${default_min_kelvin}"
 exterieur_cote_max_kelvin: "${default_max_kelvin}"
@@ -83,7 +85,13 @@ portique_avant_min_kelvin: "${default_min_kelvin}"
 portique_avant_mid_kelvin: "4000"
 portique_avant_max_kelvin: "${default_max_kelvin}"
 tout_le_sous_sol_lights_ha_entity_id: "tout_le_sous_sol"
-media_player_garage_entity_id: "media_player.mass_garage"
+
+volume_control_garage_entity_id: "number.garage_alsa_audio_garage_alsa_audio_volume"
+media_player_garage_entity_id: "media_player.shairport_sync_garage"
+music_playlist1_text: "Playlist1"
+music_playlist2_text: "Ben - Plex Mix"
+music_playlist3_text: "Playlist3"
+music_playlist4_text: "Playlist4"
 
 garage_rdc_lights_ha_entity_id: "switch_garage_ss_relay"
 garage_light_automation_freeze_toggle: "input_boolean.figer_l_etat_des_lumieres_du_garage"

@@ -76,10 +76,10 @@ obj: # Speaker Volume control
                   else {return "${volume_high}";}
           on_release:
             - homeassistant.action:
-                action: media_player.volume_set
+                action: number.set_value
                 data:
-                  entity_id: ${media_player_garage_entity_id}
-                  volume_level: !lambda "return x / 100.0;"
+                  entity_id: ${volume_control_garage_entity_id}
+                  value: !lambda "return x / 100.0;"
       - button:
           width: 82
           height: 80

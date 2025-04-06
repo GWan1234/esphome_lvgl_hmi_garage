@@ -2,7 +2,7 @@ sensor:
   # Weather temperature
   - platform: homeassistant
     id: weather_temp
-    entity_id: weather.maison
+    entity_id: ${weather_ha_entity_id}
     attribute: temperature
     on_value: 
       then:
@@ -15,7 +15,7 @@ sensor:
   # Weather humidity
   - platform: homeassistant
     id: weather_hum
-    entity_id: weather.maison
+    entity_id: ${weather_ha_entity_id}
     attribute: humidity
     on_value: 
       then:
@@ -27,7 +27,7 @@ sensor:
   # Weather wind speed
   - platform: homeassistant
     id: weather_precipitation
-    entity_id: weather.maison
+    entity_id: ${weather_ha_entity_id}
     attribute: wind_speed
     on_value: 
       then:
@@ -46,7 +46,7 @@ text_sensor:
   # Weather state from Home Assistant #
   - platform: homeassistant
     id: weather_state
-    entity_id: weather.maison
+    entity_id: ${weather_ha_entity_id}
     on_value: 
       then:
         - lambda: |-
