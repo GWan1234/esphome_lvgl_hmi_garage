@@ -79,7 +79,7 @@ obj: # Speaker Volume control
                 action: number.set_value
                 data:
                   entity_id: ${volume_control_garage_entity_id}
-                  value: !lambda "return x / 100.0;"
+                  value: !lambda "return x;"
       - button:
           width: 82
           height: 80

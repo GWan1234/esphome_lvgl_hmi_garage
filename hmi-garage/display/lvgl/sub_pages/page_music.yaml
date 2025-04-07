@@ -1,28 +1,26 @@
-#online_image:
-#  - url: ${default_music_cover_png_url}
-#    id: id_online_img_now_playing
-#    format: png
+online_image:
+  - url: ${music_cover_jpg_url}
+    id: id_online_img_now_playing
+    format: jpg
 #    resize: 200x200
-#    type: RGB565
-#    placeholder: id_img_music_note
-#    on_download_finished:
-#      then:
-#        - lvgl.image.update:
-#            id: id_lvgl_image_now_playing
-#            src: id_online_img_now_playing
-#    on_error:
-#      then:
-#        - online_image.set_url:
-#            id: id_online_img_now_playing
-#            url: ${default_music_cover_png_url}
+    type: RGB565
+    on_download_finished:
+      then:
+        - lvgl.image.update:
+            id: id_lvgl_image_now_playing
+            src: id_online_img_now_playing
+    on_error:
+      then:
+        - online_image.set_url:
+            id: id_online_img_now_playing
+            url: ${default_music_cover_jpg_url}
 
 binary_sensor:
   # Used by media control widget in LVGL's top_layer
   - platform: homeassistant
     id: id_media_muted
     internal: True
-    entity_id: ${media_player_garage_entity_id}
-    attribute: is_volume_muted
+    entity_id: ${mute_state_garage_entity_id}
     publish_initial_state: True
     on_state: 
       then:
@@ -61,13 +59,12 @@ sensor:
   # Media player volume value
   - platform: homeassistant
     id: id_media_volume
-    entity_id: ${media_player_garage_entity_id}
+    entity_id: ${volume_control_garage_entity_id}
     internal: true
-    attribute: volume_level
     on_value:
       - lvgl.slider.update:
           id: id_lv_slid_media_volume
-          value: !lambda "return x * 100.0;"
+          value: !lambda "return x;"
           
 text_sensor:
   - platform: homeassistant
@@ -89,24 +86,6 @@ text_sensor:
             - lvgl.label.update:
                 id: id_lv_lab_music_playpause_icon
                 text: ${play_icon}
-# TODO online_image re-enable once PNG decoder error is fixed
-#  - platform: homeassistant
-#    id: id_media_now_playing_ico
-#    entity_id: ${media_player_garage_entity_id}
-#    attribute: entity_picture
-#    filters:
-#      - prepend: ${ha_instance_url}
-#    internal: true
-#    on_value:
-#      then:
-#        - online_image.set_url:
-#            id: id_online_img_now_playing
-#            url: !lambda "return x.c_str();"
-#        - if:
-#            condition:
-#              lvgl.page.is_showing: page_music
-#            then:
-#              - component.update: id_online_img_now_playing
 
   - platform: homeassistant
     id: id_media_now_playing_track
@@ -124,6 +103,13 @@ text_sensor:
         - lvgl.label.update:
             id: id_lv_lab_now_playing_artist_name
             text: " "
+        - if:
+            condition:
+              lvgl.page.is_showing: page_music
+            then:
+              - delay: 100ms
+              - component.update: id_online_img_now_playing
+
   - platform: homeassistant
     id: id_media_now_playing_album
     entity_id: ${media_player_garage_entity_id}
@@ -224,9 +210,9 @@ lvgl:
     - id: page_music
       bg_color: color_black
       # TODO online_image re-enable once PNG decoder error is fixed
-#      on_load:
-#        then:
-#          - component.update: id_online_img_now_playing
+      on_load:
+        then:
+          - component.update: id_online_img_now_playing
       widgets:
         - obj:
             id: id_lvgl_music_player
@@ -240,7 +226,7 @@ lvgl:
             scrollable: False
             widgets:
               - image:
-                  src: id_img_music_note #id_online_img_now_playing
+                  src: id_online_img_now_playing
                   id: id_lvgl_image_now_playing
                   bg_opa: TRANSP
                   align: TOP_LEFT

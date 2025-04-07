@@ -49,10 +49,10 @@ home_floor_g:       "\U000F0D85" # mdi-home-floor-g
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
 ha_auth_token: !secret ha_long_term_auth_token
-default_music_cover_png_url: 'http://192.168.0.250:8123/local/music_note_cover.png?authToken=${ha_auth_token}'
+music_cover_jpg_url: 'http://192.168.1.192/music_cover.jpg'
 default_music_cover_jpg_url: 'http://192.168.0.250:8123/local/music_note_cover.jpg?authToken=${ha_auth_token}'
 
-screen_idle_timeout_seconds: "5"
+#screen_idle_timeout_seconds: "5"
 entity_update_debounce_ms: "350"
 
 default_min_kelvin: "2000"
@@ -87,6 +87,7 @@ portique_avant_max_kelvin: "${default_max_kelvin}"
 tout_le_sous_sol_lights_ha_entity_id: "tout_le_sous_sol"
 
 volume_control_garage_entity_id: "number.garage_alsa_audio_garage_alsa_audio_volume"
+mute_state_garage_entity_id: "switch.garage_alsa_audio_garage_alsa_audio_mute"
 media_player_garage_entity_id: "media_player.shairport_sync_garage"
 music_playlist1_text: "Playlist1"
 music_playlist2_text: "Ben - Plex Mix"
