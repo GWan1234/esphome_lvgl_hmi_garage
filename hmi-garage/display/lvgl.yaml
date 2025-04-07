@@ -116,12 +116,12 @@ image: !include images.yaml
 color: !include colors.yaml
 
 lvgl:
-  on_idle:
-    timeout: ${screen_idle_timeout_seconds}s
-    then:
-      - binary_sensor.template.publish:
-          id: id_bin_bl_state
-          state: False
+#  on_idle:
+#    timeout: ${screen_idle_timeout_seconds}s
+#    then:
+#      - binary_sensor.template.publish:
+#          id: id_bin_bl_state
+#          state: False
   gradients: !include lvgl/gradients.yaml  
   disp_bg_image: none
             

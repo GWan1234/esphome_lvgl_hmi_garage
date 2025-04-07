@@ -38,13 +38,7 @@ esphome:
     # https://github.com/esphome/issues/issues/3722
     - priority: -100 # everything should be initialized
       then:
-        - binary_sensor.template.publish:
-            id: id_bin_bl_state
-            state: True
-        - delay: 100ms
-        - binary_sensor.template.publish:
-            id: id_bin_bl_state
-            state: False
+        - script.execute: id_script_backlight_timeout
 
 logger:
   level: DEBUG
@@ -308,9 +302,7 @@ touchscreen:
           - logger.log: "LVGL resuming"
           - lvgl.resume:
           - lvgl.widget.redraw:
-    - binary_sensor.template.publish:
-        id: id_bin_bl_state
-        state: True
+    - script.execute: id_script_backlight_timeout
 
 # Display
 display:

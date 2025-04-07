@@ -15,4 +15,5 @@ packages:
   online_image: !include hmi-garage/components/online_image.yaml
   select: !include hmi-garage/components/select.yaml
   number: !include hmi-garage/components/number.yaml
+  script: !include hmi-garage/components/script.yaml
   lvgl: !include hmi-garage/display/lvgl.yaml

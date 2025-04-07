@@ -12,6 +12,4 @@ button:
             - logger.log: "LVGL resuming"
             - lvgl.resume:
             - lvgl.widget.redraw:
-      - binary_sensor.template.publish:
-          id: id_bin_bl_state
-          state: True
+      - script.execute: id_script_backlight_timeout
