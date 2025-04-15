@@ -1,1 +1,5 @@
-# Intentionally left empty
+sensor:
+  - platform: uptime
+    type: seconds
+    name: Uptime
+    update_interval: 60s

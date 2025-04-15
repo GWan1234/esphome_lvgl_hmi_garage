@@ -34,8 +34,6 @@ esphome:
     # No second OTA partition. Must be flashed through serial (hint: ser2net)
 #    board_build.partitions: "../../../hmi-garage/custom_partition_no_ota.csv"
   on_boot:
-    # Workaround for binary_sensor with delayed_off filter
-    # https://github.com/esphome/issues/issues/3722
     - priority: -100 # everything should be initialized
       then:
         - script.execute: id_script_backlight_timeout
@@ -93,6 +91,9 @@ wifi:
 ota:
   platform: esphome
 
+mdns:
+  disabled: True
+  
 #web_server:
 #  port: 80
 #  version: 3
