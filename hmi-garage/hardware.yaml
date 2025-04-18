@@ -20,10 +20,12 @@ esp32:
       #CONFIG_COMPILER_OPTIMIZATION_SIZE: y
       CONFIG_COMPILER_OPTIMIZATION_PERF: y
       #CONFIG_COMPILER_OPTIMIZATION_DEBUG: y
+    advanced:
+      enable_idf_experimental_features: True
 
 esphome:
   name: ${dname}
-  min_version: 2025.02.0
+  min_version: 2025.04.0
   platformio_options:
     build_unflags: -Werror=all
     board_build.flash_mode: dio
