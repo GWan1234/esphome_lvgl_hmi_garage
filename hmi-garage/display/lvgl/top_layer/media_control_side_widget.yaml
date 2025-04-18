@@ -31,9 +31,10 @@ obj: # Speaker Volume control
           border_width: 0
           radius: 0
           on_press:
-            - event.trigger:
-                id: id_event_media
-                event_type: button_mute
+            - homeassistant.event:
+                event: esphome.button_pressed
+                data:
+                  message: button_mute
       - label:
           id: id_lv_lab_speaker_icon
           align: TOP_MID
@@ -91,9 +92,10 @@ obj: # Speaker Volume control
           border_width: 0
           radius: 0
           on_press:
-            - event.trigger:
-                id: id_event_media
-                event_type: button_play_pause
+            - homeassistant.event:
+                event: esphome.button_pressed
+                data:
+                  message: button_play_pause
       - label:
           id: id_lv_lab_music_playpause_icon
           align: BOTTOM_MID

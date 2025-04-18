@@ -188,23 +188,6 @@ text_sensor:
                   text: ${shuffle_disabled_icon}
                   text_color: color_gray
 
-event:
-  - platform: template
-    id: id_event_media
-    name: "${uname} Media Events"
-    event_types:
-      - button_mute
-      - button_play_pause
-      - button_repeat
-      - button_shuffle
-      - button_next_track
-      - button_previous_track
-      - button_radio
-      - button_playlist1
-      - button_playlist2
-      - button_playlist3
-      - button_playlist4
-
 lvgl:
   pages:
     - id: page_music
@@ -291,9 +274,10 @@ lvgl:
                           text: ${skip_previous_icon}
                   on_press:
                       then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_previous_track
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_previous_track
 
               - button:
                   x: 100
@@ -310,9 +294,10 @@ lvgl:
                           text: ${skip_next_icon}
                   on_press:
                       then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_next_track
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_next_track
 
               - button:
                   x: 26
@@ -332,9 +317,10 @@ lvgl:
                           text: ${repeat_off_icon}
                   on_press:
                       then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_repeat
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_repeat
               - button:
                   x: 126
                   y: 290
@@ -353,9 +339,10 @@ lvgl:
                           text: ${shuffle_disabled_icon}
                   on_press:
                       then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_shuffle
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_shuffle
         - buttonmatrix:
             id: id_lv_matrix_playlists
             x: 240
@@ -376,18 +363,20 @@ lvgl:
                     recolor: true
                   on_press:
                     then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_playlist1
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_playlist1
                 - id: id_lv_btnmat_pl2
                   text: ${music_playlist2_text}
                   control:
                     recolor: true
                   on_press:
                     then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_playlist2
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_playlist2
               - buttons:
                 - id: id_lv_btnmat_pl3
                   text: ${music_playlist3_text}
@@ -395,18 +384,20 @@ lvgl:
                     recolor: true
                   on_press:
                     then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_playlist3
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_playlist3
                 - id: id_lv_btnmat_pl4
                   text: ${music_playlist4_text}
                   control:
                     recolor: true
                   on_press:
                     then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_playlist4
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_playlist
               - buttons:
                 - id: id_lv_btnmat_radio
                   text: "Radio"
@@ -415,9 +406,10 @@ lvgl:
                     recolor: true
                   on_press:
                     then:
-                      - event.trigger:
-                          id: id_event_media
-                          event_type: button_radio
+                      - homeassistant.event:
+                          event: esphome.button_pressed
+                          data:
+                            message: button_radio
         - button:
             x: 0
             y: 0
