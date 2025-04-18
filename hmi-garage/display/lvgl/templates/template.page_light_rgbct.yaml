@@ -221,9 +221,13 @@ text_sensor:
                 border_opa: TRANSP
             - if:
                 condition:
-                  text_sensor.state:
-                    id: id_${light_ha_entity}_color_mode
-                    state: "hs"
+                  or:
+                  - text_sensor.state:
+                      id: id_${light_ha_entity}_color_mode
+                      state: "hs"
+                  - text_sensor.state:
+                      id: id_${light_ha_entity}_color_mode
+                      state: "xy"
                 then: 
                   - lvgl.widget.update:
                       id: id_lv_obj_${light_ha_entity}_color_rgb
