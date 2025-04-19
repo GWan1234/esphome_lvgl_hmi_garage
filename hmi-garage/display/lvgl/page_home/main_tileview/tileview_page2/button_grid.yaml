@@ -42,42 +42,37 @@ widgets:
             action: light.toggle
             data:
               entity_id: light.${grenier_light_ha_entity_id}
-#  - button:
-#      id: id_lv_but_exta_light
-#      bg_color: color_black
-#      shadow_color: color_gray
-#      shadow_spread: 2
-#      shadow_width: 20
-#      shadow_opa: 100%
-#      grid_cell_column_pos: 0
-#      grid_cell_row_pos: 0
-#      grid_cell_x_align: STRETCH
-#      grid_cell_y_align: STRETCH
-#      widgets:
-#        - label:
-#            id: id_lv_lab_exta_light
-#            align: LEFT_MID
-#            x: 0
-#            text_font: mdi_icons_48
-#            text_color: color_gray
-#            text: "${lightbulb_group}"
-#        - label:
-#            align: LEFT_MID
-#            x: 60
-#            text_font: lato_24
-#            text_color: color_white
-#            text: "Extérieur\n   Avant"
-#      on_short_click:
-#        - homeassistant.action:
-#            action: light.toggle
-#            data:
-#              entity_id: light.${exterieur_avant_lights_ha_entity_id}
-#      on_long_press:
-#        then:
-#            - lvgl.page.show: 
-#                id: page_light_exterieur_avant
-#                animation: OUT_RIGHT
-#                time: 300ms
+  - button:
+      id: id_lv_but_lock_fr
+      bg_color: color_black
+      shadow_color: color_red
+      shadow_spread: 2
+      shadow_width: 20
+      shadow_opa: 100%
+      grid_cell_column_pos: 1
+      grid_cell_row_pos: 0
+      grid_cell_x_align: STRETCH
+      grid_cell_y_align: STRETCH
+      widgets:
+        - label:
+            id: id_lv_lab_ico_lock_fr
+            align: LEFT_MID
+            x: 0
+            text_font: mdi_icons_48
+            text_color: color_red
+            text: "${unlocked}"
+        - label:
+            id: id_lv_lab_lock_fr
+            align: LEFT_MID
+            x: 60
+            text_font: lato_24
+            text_color: color_red
+            text: "Porte Avant"
+      on_short_click:
+        - homeassistant.event:
+            event: esphome.button_pressed
+            data:
+              message: button_lock_front_door_toggle
 #  - button:
 #      id: id_lv_but_extm
 #      bg_color: color_black

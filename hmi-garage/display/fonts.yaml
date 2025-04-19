@@ -160,6 +160,8 @@
     "\U000F03E4", # mdi-pause
     "\U000F040A", # mdi-play
     "\U000F0D85", # mdi-home-floor-g
+    "\U000F033E", # mdi-lock
+    "\U000F0FC6", # mdi-lock-open-variant
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"
@@ -187,6 +189,7 @@
 #    "\U000F058E", # mdi-water-percent
     "\U000F04AD", # mdi-skip-next
     "\U000F04AE", # mdi-skip-previous
+    "\U000F0A48", # mdi-exit-run
   ]
 #- file: "hmi-garage/fonts/Icons.ttf"
 #  id: icons_18

@@ -45,6 +45,9 @@ shuffle_icon:       "\U000F049D" # mdi-shuffle
 waves_arrow_left:   "\U000F1859" # mdi-waves-arrow-left
 waves_arrow_up:     "\U000F185B" # mdi-waves-arrow-up
 home_floor_g:       "\U000F0D85" # mdi-home-floor-g
+exit_run:           "\U000F0A48" # mdi-exit-run
+locked:             "\U000F033E" # mdi-lock
+unlocked:           "\U000F0FC6" # mdi-lock-open-variant
 
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
