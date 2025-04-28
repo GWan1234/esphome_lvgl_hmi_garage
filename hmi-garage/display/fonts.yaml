@@ -18,13 +18,16 @@
         ù,
         û,
         ç,
+        ô,
         É,
         È,
         Ê,
         Ç,
         ñ,
         ³,
-        †
+        †,
+        Ô,
+        µ
       ]
 
 #- file: "hmi-garage/fonts/Lato-Regular.ttf"
@@ -47,10 +50,12 @@
         ù,
         û,
         ç,
+        ô,
         É,
         È,
         Ê,
         Ç,
+        Ô,
         ñ
       ]
 
@@ -162,6 +167,7 @@
     "\U000F0D85", # mdi-home-floor-g
     "\U000F033E", # mdi-lock
     "\U000F0FC6", # mdi-lock-open-variant
+    "\U000F071F", # mdi-speaker-wireless
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"

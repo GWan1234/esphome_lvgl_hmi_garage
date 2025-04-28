@@ -26,36 +26,6 @@ binary_sensor:
         - lvgl.label.update: 
             id: id_lv_lab_riv_lvl_crit_notif
             hidden: true
-  - platform: homeassistant
-    id: id_bin_lock_front
-    internal: True
-    entity_id: binary_sensor.etat_verrou_porte_avant
-    publish_initial_state: True
-    on_press:
-      then:
-        - lvgl.button.update: 
-            id: id_lv_but_lock_fr
-            shadow_color: color_green
-        - lvgl.label.update:
-            id: id_lv_lab_lock_fr
-            text_color: color_green
-        - lvgl.label.update:
-            id: id_lv_lab_ico_lock_fr
-            text_color: color_green
-            text: "${locked}"
-    on_release:
-      then:
-        - lvgl.button.update: 
-            id: id_lv_but_lock_fr
-            shadow_color: color_red
-        - lvgl.label.update:
-            id: id_lv_lab_lock_fr
-            text_color: color_red
-        - lvgl.label.update:
-            id: id_lv_lab_ico_lock_fr
-            text_color: color_red
-            text: "${unlocked}"
-
 
 sensor:
   - platform: homeassistant

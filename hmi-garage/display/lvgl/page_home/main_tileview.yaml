@@ -1,5 +1,6 @@
 packages:
   page1_climate_widgets_sensors: !include main_tileview/tileview_page1/climate_widgets_sensors.yaml
+  page2_buttons_sensors: !include main_tileview/tileview_page2/button_state_sensors.yaml
   page2_widgets_sensors: !include main_tileview/tileview_page2/widgets_sensors.yaml
 
 lvgl:

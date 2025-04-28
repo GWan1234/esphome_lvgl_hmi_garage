@@ -48,6 +48,7 @@ home_floor_g:       "\U000F0D85" # mdi-home-floor-g
 exit_run:           "\U000F0A48" # mdi-exit-run
 locked:             "\U000F033E" # mdi-lock
 unlocked:           "\U000F0FC6" # mdi-lock-open-variant
+speaker_wireless:   "\U000F071F" # mdi-speaker-wireless
 
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
@@ -91,8 +92,11 @@ tout_le_sous_sol_lights_ha_entity_id: "tout_le_sous_sol"
 
 volume_control_garage_entity_id: "number.garage_alsa_audio_garage_alsa_audio_volume"
 mute_state_garage_entity_id: "switch.garage_alsa_audio_garage_alsa_audio_mute"
-media_player_garage_entity_id: "media_player.shairport_sync_garage"
-mass_garage_entity_id: "media_player.mass_garage"
+media_player_garage_entity_id: "media_player.garage_proxy" # For play/pause/idle state
+media_player_title_entity_id: "sensor.shairport_garage_media_title_sanitized"
+media_player_album_entity_id: "sensor.shairport_garage_media_album_sanitized"
+media_player_artist_entity_id: "sensor.shairport_garage_media_artist_sanitized"
+mass_garage_entity_id: "media_player.mass_garage" # For repeat and shuffle states
 media_from_mass_entity_id: "binary_sensor.garage_audio_from_mass"
 music_playlist1_text: "Playlist1"
 music_playlist2_text: "Ben - Plex Mix"
@@ -117,3 +121,15 @@ garage_ss_light_automation_freeze_add_hour: "input_button.figer_les_lumieres_gar
 garage_ss_light_automation_freeze_sub_hour: "input_button.figer_les_lumieres_garage_ss_soustraire_1_heure"
 garage_ss_light_automation_freeze_add_minutes: "input_button.figer_les_lumieres_garage_ss_ajouter_10_minutes"
 garage_ss_light_automation_freeze_sub_minutes: "input_button.figer_les_lumieres_garage_ss_soustraire_10_minutes"
+
+cuisine_volume_control_entity_id: "number.homepod_cuisine_volume"
+cuisine_mute_state_entity_id: "switch.homepod_cuisine_virtual_mute"
+cuisine_media_player_entity_id: "media_player.cuisine_proxy"
+
+corridor_volume_control_entity_id: "number.homepod_corridor_volume"
+corridor_mute_state_entity_id: "switch.homepod_corridor_virtual_mute"
+corridor_media_player_entity_id: "media_player.corridor_proxy"
+
+atelier_volume_control_entity_id: "number.atelier_alsa_audio_atelier_alsa_audio_volume"
+atelier_mute_state_entity_id: "switch.atelier_alsa_audio_atelier_alsa_audio_mute"
+atelier_media_player_entity_id: "media_player.shairport_sync_atelier"

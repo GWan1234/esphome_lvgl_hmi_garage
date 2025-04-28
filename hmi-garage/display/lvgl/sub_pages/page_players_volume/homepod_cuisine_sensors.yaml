@@ -1,0 +1,45 @@
+binary_sensor:
+  - platform: homeassistant
+    id: id_bin_cuisine_muted
+    internal: True
+    entity_id: ${cuisine_mute_state_entity_id}
+    publish_initial_state: True
+    on_state: 
+      then:
+        - lvgl.label.update:
+            id: id_cuisine_speaker_icon
+            text: !lambda  |-
+              if(x == true) {return "${volume_off}";}
+              else if(x < 25) {return "${volume_low}";}
+              else if (x < 65) {return "${volume_medium}";}
+              else {return "${volume_high}";}
+
+sensor:
+  - platform: homeassistant
+    id: id_sens_cuisine_volume
+    entity_id: ${cuisine_volume_control_entity_id}
+    internal: true
+    on_value:
+      - lvgl.slider.update:
+          id: id_lv_slid_cuisine_vol
+          value: !lambda "return x;"
+          
+text_sensor:
+  - platform: homeassistant
+    id: id_cuisine_media_state
+    entity_id: ${cuisine_media_player_entity_id}
+    internal: true
+    on_value:
+      - if:
+          condition:
+            text_sensor.state:
+              id: id_cuisine_media_state
+              state: 'playing'
+          then:
+            - lvgl.label.update:
+                id: id_cuisine_play_pause_icon
+                text: ${pause_icon}
+          else:
+            - lvgl.label.update:
+                id: id_cuisine_play_pause_icon
+                text: ${play_icon}

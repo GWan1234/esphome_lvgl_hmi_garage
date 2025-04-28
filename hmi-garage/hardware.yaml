@@ -68,6 +68,7 @@ logger:
     homeassistant.binary_sensor: WARN
     homeassistant.text_sensor: WARN
     template.switch: WARN
+    script: WARN
 
 api:
 

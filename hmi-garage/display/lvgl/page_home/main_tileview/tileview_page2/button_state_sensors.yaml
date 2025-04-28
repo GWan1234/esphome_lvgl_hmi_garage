@@ -1,0 +1,57 @@
+script:
+  - id: id_script_blink_lock_ico
+    mode: restart
+    then:
+      - lvgl.button.update: 
+          id: id_lv_but_lock_fr
+          shadow_opa: TRANSP
+      - repeat:
+          count: 45  # 45 x 1000ms = 45 seconds
+          then:
+            - lvgl.widget.hide: id_lv_lab_ico_lock_fr
+            - delay: 500ms
+            - lvgl.widget.show: id_lv_lab_ico_lock_fr
+            - delay: 500ms
+      - lvgl.widget.show: id_lv_lab_ico_lock_fr
+      - lvgl.button.update: 
+          id: id_lv_but_lock_fr
+          shadow_opa: COVER
+
+binary_sensor:
+  - platform: homeassistant
+    id: id_bin_lock_front
+    internal: True
+    entity_id: binary_sensor.etat_verrou_porte_avant
+    publish_initial_state: True
+    on_press:
+      then:
+        - script.stop: id_script_blink_lock_ico
+        - lvgl.button.update: 
+            id: id_lv_but_lock_fr
+            shadow_color: color_red
+        - lvgl.label.update:
+            id: id_lv_lab_lock_fr
+            text_color: color_red
+        - lvgl.label.update:
+            id: id_lv_lab_ico_lock_fr
+            text_color: color_red
+            text: "${unlocked}"
+        - lvgl.button.update: 
+            id: id_lv_but_lock_fr
+            shadow_opa: COVER
+    on_release:
+      then:
+        - script.stop: id_script_blink_lock_ico
+        - lvgl.button.update: 
+            id: id_lv_but_lock_fr
+            shadow_color: color_green
+        - lvgl.label.update:
+            id: id_lv_lab_lock_fr
+            text_color: color_green
+        - lvgl.label.update:
+            id: id_lv_lab_ico_lock_fr
+            text_color: color_green
+            text: "${locked}"
+        - lvgl.button.update: 
+            id: id_lv_but_lock_fr
+            shadow_opa: COVER
