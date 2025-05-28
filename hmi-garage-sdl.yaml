@@ -17,8 +17,3 @@ packages:
   number: !include hmi-garage/components/number.yaml
   script: !include hmi-garage/components/script.yaml
   lvgl: !include hmi-garage/display/lvgl.yaml
-
-external_components:
-  - source: github://pr#8040
-    refresh: 30s
-    components: [http_request]
