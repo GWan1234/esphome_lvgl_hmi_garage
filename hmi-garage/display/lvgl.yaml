@@ -125,7 +125,18 @@ lvgl:
 #          state: False
   gradients: !include lvgl/gradients.yaml  
   disp_bg_image: none
-            
+
+  on_boot:
+    then:
+      - lvgl.widget.hide: page_light_garage_rdc
+      - lvgl.widget.hide: page_light_garage_ss
+      - lvgl.widget.hide: page_lamp
+      - lvgl.widget.hide: page_light_exterieur_garage
+      - lvgl.widget.hide: page_light_exterieur_cote
+      - lvgl.widget.hide: page_music
+      - lvgl.widget.hide: page_players_volume
+      - lvgl.widget.hide: page_settings
+
   top_layer: # Top Screen Status bar. Visible on all pages.
     widgets:
       - <<: !include lvgl/top_layer/media_control_side_widget.yaml

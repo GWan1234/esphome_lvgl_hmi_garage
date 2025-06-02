@@ -39,6 +39,7 @@ widgets:
               entity_id: light.${garage_rdc_lights_ha_entity_id}
       on_long_press:
         then:
+            - lvgl.widget.show: page_light_garage_rdc
             - lvgl.page.show: 
                 id: page_light_garage_rdc
                 animation: OUT_RIGHT
@@ -75,6 +76,7 @@ widgets:
               entity_id: light.${garage_ss_lights_ha_entity_id}
       on_long_press:
         then:
+            - lvgl.widget.show: page_light_garage_ss
             - lvgl.page.show: 
                 id: page_light_garage_ss
                 animation: OUT_RIGHT
@@ -114,6 +116,7 @@ widgets:
               brightness_pct: "65"
       on_long_press:
         then:
+            - lvgl.widget.show: page_light_exterieur_cote
             - lvgl.page.show: 
                 id: page_light_exterieur_cote
                 animation: OUT_RIGHT
@@ -153,6 +156,7 @@ widgets:
               brightness_pct: "65"
       on_long_press:
         then:
+            - lvgl.widget.show: page_light_exterieur_garage
             - lvgl.page.show: 
                 id: page_light_exterieur_garage
                 animation: OUT_RIGHT
@@ -192,6 +196,7 @@ widgets:
               brightness_pct: "65"
       on_long_press:
         then:
+            - lvgl.widget.show: page_lamp
             - lvgl.page.show: 
                 id: page_lamp
                 animation: OUT_RIGHT
@@ -222,12 +227,14 @@ widgets:
             text: " Musique\n  Garage"
       on_short_click:
         then:
+            - lvgl.widget.show: page_music
             - lvgl.page.show: 
                 id: page_music
                 animation: OUT_RIGHT
                 time: 300ms
       on_long_press:
         then:
+            - lvgl.widget.show: page_music
             - lvgl.page.show: 
                 id: page_music
                 animation: OUT_RIGHT
