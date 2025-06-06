@@ -3,6 +3,7 @@ packages:
   page_settings: !include lvgl/sub_pages/page_settings.yaml
   page_music: !include lvgl/sub_pages/page_music.yaml
   page_players_volume: !include lvgl/sub_pages/page_players_volume.yaml
+  page_watering: !include lvgl/sub_pages/page_watering.yaml
   notification_area_sensors: !include notification_area_sensors.yaml
 
   page_light_garage_rdc: !include 
@@ -134,6 +135,7 @@ lvgl:
       - lvgl.widget.hide: page_light_exterieur_garage
       - lvgl.widget.hide: page_light_exterieur_cote
       - lvgl.widget.hide: page_music
+      - lvgl.widget.hide: page_watering
       - lvgl.widget.hide: page_players_volume
       - lvgl.widget.hide: page_settings
 

@@ -95,6 +95,14 @@
 #  bpp: 4
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"
+  id: mdi_icons_24
+  size: 24
+  bpp: 4
+  glyphs: [
+    "\U000F10CC", # mdi-battery-alert-variant
+  ]
+
+- file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"
   id: mdi_icons_32
   size: 32
   bpp: 4
@@ -130,6 +138,7 @@
     "\U000F185B", # mdi-waves-arrow-up
     "\U000F0D85", # mdi-home-floor-g
     "\U000F110E", # mdi-shaker
+    "\U000F1060", # mdi-sprinkler-variant
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"
@@ -169,6 +178,7 @@
     "\U000F033E", # mdi-lock
     "\U000F0FC6", # mdi-lock-open-variant
     "\U000F071F", # mdi-speaker-wireless
+    "\U000F1060", # mdi-sprinkler-variant
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"

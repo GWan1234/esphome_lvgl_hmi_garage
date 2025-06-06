@@ -50,6 +50,8 @@ locked:             "\U000F033E" # mdi-lock
 unlocked:           "\U000F0FC6" # mdi-lock-open-variant
 speaker_wireless:   "\U000F071F" # mdi-speaker-wireless
 salt_shaker:        "\U000F110E" # mdi-shaker
+sprinkler:          "\U000F1060" # mdi-sprinkler-variant
+battery_alert:      "\U000F10CC" # mdi-battery-alert-variant
 
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
