@@ -4,6 +4,7 @@ border_opa: TRANSP
 #radius: 0
 layout:
   type: GRID
+  pad_row: 6
   grid_columns: [100%]
   grid_rows: [FR(45), FR(45), FR(10)]
 #scrollable: "OFF"
