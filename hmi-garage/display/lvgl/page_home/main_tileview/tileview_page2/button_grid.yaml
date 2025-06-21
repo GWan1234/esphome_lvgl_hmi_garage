@@ -259,12 +259,14 @@ widgets:
             text: "Settings"
       on_short_click:
         then:
+            - lvgl.widget.show: page_settings
             - lvgl.page.show: 
                 id: page_settings
                 animation: OUT_RIGHT
                 time: 300ms
       on_long_press:
         then:
+            - lvgl.widget.show: page_settings
             - lvgl.page.show: 
                 id: page_settings
                 animation: OUT_RIGHT

@@ -14,9 +14,23 @@ widgets:
       grid_cell_x_align: STRETCH
       grid_cell_y_align: STRETCH
       <<: !include "rez-de-chaussee_widget.yaml"
-  - obj:
+  - button:
       grid_cell_column_pos: 0
       grid_cell_row_pos: 1
       grid_cell_x_align: STRETCH
       grid_cell_y_align: STRETCH
       <<: !include "river_widgets.yaml"
+      on_short_click:
+        then:
+          - lvgl.widget.show: page_river_graph
+          - lvgl.page.show: 
+              id: page_river_graph
+              animation: OUT_RIGHT
+              time: 300ms
+      on_long_press:
+        then:
+          - lvgl.widget.show: page_river_graph
+          - lvgl.page.show: 
+              id: page_river_graph
+              animation: OUT_RIGHT
+              time: 300ms
