@@ -14,6 +14,7 @@ api:
   on_client_connected:
     then:
       - component.update: id_img_river_flow_graph
+      - component.update: id_online_img_now_playing
 
 http_request:
 

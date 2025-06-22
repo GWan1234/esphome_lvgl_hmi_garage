@@ -87,6 +87,8 @@ api:
     then:
       - delay: 3s
       - component.update: id_img_river_flow_graph
+      - delay: 1s
+      - component.update: id_online_img_now_playing
 
 http_request:
   verify_ssl: false

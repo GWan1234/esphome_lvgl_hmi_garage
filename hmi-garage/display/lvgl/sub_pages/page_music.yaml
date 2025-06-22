@@ -1,19 +1,18 @@
-#online_image:
-#  - url: ${music_cover_jpg_url}
-#    id: id_online_img_now_playing
-#    format: jpg
-##    resize: 200x200
-#    type: RGB565
-#    on_download_finished:
-#      then:
-#        - lvgl.image.update:
-#            id: id_lvgl_image_now_playing
-#            src: id_online_img_now_playing
-#    on_error:
-#      then:
-#        - online_image.set_url:
-#            id: id_online_img_now_playing
-#            url: ${default_music_cover_jpg_url}
+online_image:
+  - url: ${music_cover_png_url} # Image is expected to be 200x200 pixels
+    id: id_online_img_now_playing
+    format: png
+    type: RGB565
+    on_download_finished:
+      then:
+        - lvgl.image.update:
+            id: id_lvgl_image_now_playing
+            src: id_online_img_now_playing
+    on_error:
+      then:
+        - online_image.set_url:
+            id: id_online_img_now_playing
+            url: ${default_music_cover_png_url}
 
 binary_sensor:
   # Used by media control widget in LVGL's top_layer
@@ -108,12 +107,7 @@ text_sensor:
         - lvgl.label.update:
             id: id_lv_lab_now_playing_artist_name
             text: " "
-#        - if:
-#            condition:
-#              lvgl.page.is_showing: page_music
-#            then:
-#              - delay: 100ms
-#              - component.update: id_online_img_now_playing
+        - component.update: id_online_img_now_playing
 
   - platform: homeassistant
     id: id_media_now_playing_album
@@ -209,10 +203,6 @@ lvgl:
   pages:
     - id: page_music
       bg_color: color_black
-      # TODO online_image re-enable once PNG decoder error is fixed
-#      on_load:
-#        then:
-#          - component.update: id_online_img_now_playing
       widgets:
         - obj:
             id: id_lvgl_music_player
@@ -226,7 +216,7 @@ lvgl:
             scrollable: False
             widgets:
               - image:
-                  src: id_img_music_note #id_online_img_now_playing
+                  src: id_online_img_now_playing
                   id: id_lvgl_image_now_playing
                   bg_opa: TRANSP
                   align: TOP_LEFT
