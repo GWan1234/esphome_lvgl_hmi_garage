@@ -179,6 +179,7 @@
     "\U000F0FC6", # mdi-lock-open-variant
     "\U000F071F", # mdi-speaker-wireless
     "\U000F1060", # mdi-sprinkler-variant
+    "\U000F0B6D", # mdi-car-key
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"

@@ -52,6 +52,7 @@ speaker_wireless:   "\U000F071F" # mdi-speaker-wireless
 salt_shaker:        "\U000F110E" # mdi-shaker
 sprinkler:          "\U000F1060" # mdi-sprinkler-variant
 battery_alert:      "\U000F10CC" # mdi-battery-alert-variant
+car_key:            "\U000F0B6D" # mdi-car-key
 
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
