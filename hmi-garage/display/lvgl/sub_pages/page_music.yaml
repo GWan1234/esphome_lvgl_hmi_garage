@@ -12,7 +12,7 @@ online_image:
       then:
         - online_image.set_url:
             id: id_online_img_now_playing
-            url: ${default_music_cover_png_url}
+            url: ${fallback_music_cover_png_url}
 
 binary_sensor:
   # Used by media control widget in LVGL's top_layer
@@ -107,6 +107,9 @@ text_sensor:
         - lvgl.label.update:
             id: id_lv_lab_now_playing_artist_name
             text: " "
+        - online_image.set_url:
+            id: id_online_img_now_playing
+            url: ${default_music_cover_png_url}
         - component.update: id_online_img_now_playing
 
   - platform: homeassistant

@@ -89,6 +89,13 @@ api:
       - component.update: id_img_river_flow_graph
       - delay: 1s
       - component.update: id_online_img_now_playing
+  actions:
+    - action: refresh_now_playing_art
+      then:
+        - online_image.set_url:
+            id: id_online_img_now_playing
+            url: ${music_cover_png_url}
+        - component.update: id_online_img_now_playing
 
 http_request:
   verify_ssl: false
