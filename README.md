@@ -21,7 +21,11 @@ This HMI is used to:
 - Control Music volume/mute and play/pause status.
 - Sub page to control RGBCT lights. Switch between color_temp and rgb mode. Activate effects, pick color/temperature. WIP.
 - Sub page to override light automations, with configurable timeout.
-- Sub page for music control. Skip next/previous tracks. Media info. More to come. WIP.
+- Sub page for music control. Skip next/previous tracks. Media info. Album art.
+  - Album art is handled from external simple web server
+  - Web server handles image conversion to ease processing on Esphome device
+  - More info: https://github.com/bennydiamond/esphome_album_art_server
+
 
 ![RGB page](images/sub_color.png)
 
@@ -81,9 +85,7 @@ The [case folder](case) has a STL file for a wall-mountable case. See folder's [
 
 - Fix online_image to retrieve background
   - Waiting on PR https://github.com/esphome/esphome/pull/8354
-  - Or load it from SD card if storage support in ESPHome is ever integrated
-- Fix online_image to retrieve media cover art from Music Assistant
-  - Waiting on PR https://github.com/esphome/esphome/pull/8354
+  - Or load it from SD card if storage support in ESPHome is ever integrated 
 - Send values for entities controlled through Arc and Slider while they are interfaced
   - AKA do not use "on_release" automation trigger
   - Using "on_change" trigger automation would tank performance and spam the network continously.
