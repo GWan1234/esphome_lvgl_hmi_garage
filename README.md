@@ -24,6 +24,7 @@ This HMI is used to:
 - Sub page for music control. Skip next/previous tracks. Media info. Album art.
   - Album art is handled from external simple web server
   - Web server handles image conversion to ease processing on Esphome device
+  - Same Web server program sanitize Song's Title, Album and Artist strings and push them to ESPHome device through ESPHome's API.
   - More info: https://github.com/bennydiamond/esphome_album_art_server
 
 

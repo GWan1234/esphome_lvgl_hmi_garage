@@ -183,7 +183,7 @@ i2c:
   sda: 8
   scl: 9
   frequency: 400kHz
-  scan: true
+  scan: false
   id: bus_a
 
 button:
