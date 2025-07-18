@@ -22,7 +22,7 @@ binary_sensor:
     id: id_bin_lock_front
     internal: True
     entity_id: binary_sensor.etat_verrou_porte_avant
-    publish_initial_state: True
+    trigger_on_initial_state: True
     on_press:
       then:
         - script.stop: id_script_blink_lock_ico

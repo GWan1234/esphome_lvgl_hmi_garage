@@ -2,9 +2,11 @@ esp32:
   board: esp32-s3-devkitc-1
   variant: esp32s3
   flash_size: 8MB
-#  cpu_frequency : 240MHz
+  cpu_frequency : 240MHz
   framework:
     type: esp-idf
+    version: 5.4.2
+    platform_version: 54.03.21
     sdkconfig_options:
       CONFIG_ESP32S3_DATA_CACHE_64KB: "y"
       CONFIG_ESPTOOLPY_FLASHSIZE_8MB: "y"
@@ -90,6 +92,27 @@ api:
       - delay: 1s
       - component.update: id_online_img_now_playing
   actions:
+    - action: refresh_now_playing_title
+      variables:
+        value: string
+      then:
+        - lvgl.label.update:
+            id: id_lv_lab_now_playing_track_name
+            text: !lambda 'return value;'
+    - action: refresh_now_playing_album
+      variables:
+        value: string
+      then:
+        - lvgl.label.update:
+            id: id_lv_lab_now_playing_album_name
+            text: !lambda 'return value;'
+    - action: refresh_now_playing_artist
+      variables:
+        value: string
+      then:
+        - lvgl.label.update:
+            id: id_lv_lab_now_playing_artist_name
+            text: !lambda 'return value;'
     - action: refresh_now_playing_art
       then:
         - online_image.set_url:
