@@ -242,6 +242,12 @@ text_sensor:
       internal: True
       filters:
         - lambda: |-
+            std::string str = x;
+            if (str.length() > 264) {
+              return str.substr(0, 264);
+            }
+            return str;
+        - lambda: |-
             std::replace(x.begin(), x.end(), '|', '\n');
             return x;
         - prepend: "ESPHome version: "
