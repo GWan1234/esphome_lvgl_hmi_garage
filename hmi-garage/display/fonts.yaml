@@ -139,6 +139,8 @@
     "\U000F0D85", # mdi-home-floor-g
     "\U000F110E", # mdi-shaker
     "\U000F1060", # mdi-sprinkler-variant
+    "\U000F01B4", # mdi-delete
+    "\U000F06CC", # mdi-delete-empty
   ]
 
 - file: "hmi-garage/fonts/materialdesignicons-webfont.ttf"
