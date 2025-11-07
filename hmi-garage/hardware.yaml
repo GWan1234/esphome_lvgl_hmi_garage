@@ -1,3 +1,9 @@
+# For custom main stack size. https://github.com/esphome/esphome/pull/10564
+external_components:
+  - source: github://pr#10564
+    components: [esp32]
+    refresh: 1h
+
 esp32:
   board: esp32-s3-devkitc-1
   variant: esp32s3
@@ -24,7 +30,8 @@ esp32:
       CONFIG_COMPILER_OPTIMIZATION_PERF: y
       #CONFIG_COMPILER_OPTIMIZATION_DEBUG: y
     advanced:
-      enable_idf_experimental_features: False
+      main_loop_stack_size: 8704 #pr#10564
+#      enable_idf_experimental_features: False
 #      compiler_optimization: SIZE
 
 esphome:
