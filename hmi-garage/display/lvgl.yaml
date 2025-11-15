@@ -119,6 +119,18 @@ font: !include fonts.yaml
 image: !include images.yaml
 color: !include colors.yaml
 
+interval:
+  - interval: 200ms
+    startup_delay: 2s
+    then:
+    - if:
+        condition:
+          lvgl.page.is_showing: page_home
+        then:
+          - lvgl.widget.hide: id_lv_lab_time_notif_area
+        else:
+          - lvgl.widget.show: id_lv_lab_time_notif_area
+
 lvgl:
 #  on_idle:
 #    timeout: ${screen_idle_timeout_seconds}s
@@ -210,5 +222,10 @@ lvgl:
       title: "Statut du Mineur"
       body:
         text: "\nLe mineur est en fonction."
+    - id: id_lv_mbox_catstuff
+      close_button: true
+      title: "Problème équipement chats"
+      body:
+        text: "\nVérifier la fontaine ou la mangeoire."
     
 

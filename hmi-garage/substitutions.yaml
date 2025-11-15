@@ -55,6 +55,7 @@ battery_alert:      "\U000F10CC" # mdi-battery-alert-variant
 car_key:            "\U000F0B6D" # mdi-car-key
 trash_bin:          "\U000F01B4" # mdi-delete
 trash_bin_empty:    "\U000F06CC" # mdi-delete-empty
+cat:                "\U000F011B" # mdi-cat  
 
 ha_instance_url: "http://192.168.0.250:8123"
 # token is valid for 10 years (2025-02-15)
