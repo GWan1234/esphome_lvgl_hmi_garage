@@ -163,27 +163,31 @@ lvgl:
 
   msgboxes:
     - id: id_lv_mbox_notify_front_door
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Porte d'entrée"
       body:
         text: "\nLa porte d'entrée est ouverte."
     - id: id_lv_mbox_notify_patio_door
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Porte Patio"
       body:
         text: "\nLa porte patio est ouverte."
     - id: id_lv_mbox_notify_salt
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Adoucisseur d'eau"
       body:
         text: "\nLe niveau de sel est bas dans l'adoucisseur d'eau."
     - id: id_lv_mbox_notify_riv_lvl_crit
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Niveau de la rivière"
       body:
         text: "\nLe niveau de la rivière est élevé."
     - id: id_lv_mbox_notify_attic
-      close_button: true
+      close_button: false
       title: "Grenier"
       body:
         text: "\nLes lumières du grenier sont allumées."
@@ -197,33 +201,43 @@ lvgl:
                   data:
                     entity_id: light.${grenier_light_ha_entity_id}
               - lvgl.widget.hide: id_lv_mbox_notify_attic
+        - text: "OK"
+          on_click:
+            then:
+              - lvgl.widget.hide: id_lv_mbox_notify_attic
     - id: id_lv_mbox_notify_trash
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Jour des vidanges"
       body:
         text: "\nC'est le jour des vidanges."
     - id: id_lv_mbox_notify_recycle
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Jour du recyclage"
       body:
         text: "\nC'est le jour du recyclage."
     - id: id_lv_mbox_notify_compost
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Jour du bac brun"
       body:
         text: "\nC'est le jour du composte."
     - id: id_lv_mbox_notify_defi_hilo
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Défi Hilo"
       body:
         text: "\nDéfi Hilo en cours!"
     - id: id_lv_mbox_notify_miner
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Statut du Mineur"
       body:
         text: "\nLe mineur est en fonction."
     - id: id_lv_mbox_catstuff
-      close_button: true
+      close_button: false
+      clickable: false
       title: "Problème équipement chats"
       body:
         text: "\nVérifier la fontaine ou la mangeoire."
