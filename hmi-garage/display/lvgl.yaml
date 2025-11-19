@@ -235,6 +235,14 @@ lvgl:
       title: "Statut du Mineur"
       body:
         text: "\nLe mineur est en fonction."
+    - id: id_lv_mbox_notify_hvac
+      close_button: false
+      clickable: false
+      title: "Géothermie"
+      text_font: lato_18
+      body:
+        text: "\nLe géothermie est en fonction."
+        text_font: lato_18
     - id: id_lv_mbox_catstuff
       close_button: false
       clickable: false
